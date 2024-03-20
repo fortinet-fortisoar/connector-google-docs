@@ -1,0 +1,266 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "00249f80-4c58-4646-a46f-57b9061ceb3f",
+      "@type": "WorkflowCollection",
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "6167631a-2af2-4c59-beee-7de6add25be2",
+          "collection": "/api/3/workflow_collections/00249f80-4c58-4646-a46f-57b9061ceb3f",
+          "steps": [
+            {
+              "uuid": "49ed6f23-8a40-4ef6-b9a5-9634b2e2451d",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "c614bf3f-2016-40b8-abb9-97d006d30129",
+              "@type": "WorkflowStep",
+              "name": "Create Document",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Google Docs",
+                "config": "",
+                "params": {
+                  "title": ""
+                },
+                "version": "1.0.0",
+                "connector": "google-docs",
+                "operation": "create_document",
+                "operationTitle": "Create Document"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Creates a blank document in Google Docs based on the title you have specified.",
+          "name": "Create Document",
+          "tag": "#Google Docs",
+          "recordTags": [
+            "Google",
+            "google-docs"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/49ed6f23-8a40-4ef6-b9a5-9634b2e2451d",
+          "routes": [
+            {
+              "uuid": "d30839e4-1c70-48c9-aecc-bd35af90e140",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Create Document",
+              "sourceStep": "/api/3/workflow_steps/49ed6f23-8a40-4ef6-b9a5-9634b2e2451d",
+              "targetStep": "/api/3/workflow_steps/c614bf3f-2016-40b8-abb9-97d006d30129"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "22d13b66-d272-4742-8742-90eb6e562207",
+          "collection": "/api/3/workflow_collections/00249f80-4c58-4646-a46f-57b9061ceb3f",
+          "steps": [
+            {
+              "uuid": "95904945-5537-4973-b290-072c2e8302ff",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "6c115465-0ffd-4a02-be26-d55b8edd0841",
+              "@type": "WorkflowStep",
+              "name": "Get Document Details",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Google Docs",
+                "config": "",
+                "params": {
+                  "document_id": "",
+                  "suggestionsViewMode": "Default For Current Access"
+                },
+                "version": "1.0.0",
+                "connector": "google-docs",
+                "operation": "get_document_details",
+                "operationTitle": "Get Document Details"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Retrieves an document details based on the document ID and other input parameters that you have specified.",
+          "name": "Get Document Details",
+          "tag": "#Google Docs",
+          "recordTags": [
+            "Google",
+            "google-docs"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/95904945-5537-4973-b290-072c2e8302ff",
+          "routes": [
+            {
+              "uuid": "21694c4d-a171-459a-bf58-afe076246557",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Document Details",
+              "sourceStep": "/api/3/workflow_steps/95904945-5537-4973-b290-072c2e8302ff",
+              "targetStep": "/api/3/workflow_steps/6c115465-0ffd-4a02-be26-d55b8edd0841"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "c7580ed6-3af1-48a0-88fd-cc4bbfe34c5d",
+          "collection": "/api/3/workflow_collections/00249f80-4c58-4646-a46f-57b9061ceb3f",
+          "steps": [
+            {
+              "uuid": "e0b1affb-9e5a-44ae-b039-4fa57b7048b7",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62"
+            },
+            {
+              "uuid": "4cb68247-a0d7-439a-bc98-50f52cde9a76",
+              "@type": "WorkflowStep",
+              "name": "Update Documents",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Google Docs",
+                "config": "",
+                "params": {
+                  "document_id": "",
+                  "requiredRevisionId": "",
+                  "targetRevisionId": "",
+                  "additional_parameters": [
+                    {
+                      "createFooter": {
+                        "sectionBreakLocation": {
+                          "index": 0,
+                          "segmentId": ""
+                        },
+                        "type": "DEFAULT"
+                      },
+                      "createFootnote": {
+                        "endOfSegmentLocation": {
+                          "segmentId": ""
+                        },
+                        "location": {
+                          "index": 0,
+                          "segmentId": ""
+                        }
+                      },
+                      "createHeader": {
+                        "sectionBreakLocation": {
+                          "index": 0,
+                          "segmentId": ""
+                        },
+                        "type": ""
+                      },
+                      "createNamedRange": {
+                        "name": "",
+                        "range": {
+                          "endIndex": 0,
+                          "segmentId": "",
+                          "startIndex": 0
+                        }
+                      }
+                    }
+                  ]
+                },
+                "version": "1.0.0",
+                "connector": "google-docs",
+                "operation": "update_documents",
+                "operationTitle": "Update Documents"
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "triggerLimit": null,
+          "description": "Applies one or more updates to the document in Google Docs based on the document ID and other input parameters that you have specified.",
+          "name": "Update Documents",
+          "tag": "#Google Docs",
+          "recordTags": [
+            "Google",
+            "google-docs"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/e0b1affb-9e5a-44ae-b039-4fa57b7048b7",
+          "routes": [
+            {
+              "uuid": "6351bf43-ef50-45c4-9650-5c748bf8bb01",
+              "@type": "WorkflowRoute",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Update Documents",
+              "sourceStep": "/api/3/workflow_steps/e0b1affb-9e5a-44ae-b039-4fa57b7048b7",
+              "targetStep": "/api/3/workflow_steps/4cb68247-a0d7-439a-bc98-50f52cde9a76"
+            }
+          ]
+        }
+      ],
+      "name": "Sample - Google Docs - 1.0.0",
+      "description": "Google Docs is a cloud-based word processing application developed by Google. It allows users to create, edit, and collaborate on documents in real-time over the internet.",
+      "visible": true,
+      "recordTags": [
+        "Google",
+        "google-docs"
+      ]
+    }
+  ]
+}
