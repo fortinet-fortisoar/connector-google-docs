@@ -1,0 +1,605 @@
+{
+  "name": "google-docs",
+  "label": "Google Docs",
+  "version": "1.0.0",
+  "description": "Google Docs is a cloud-based word processing application developed by Google. It allows users to create, edit, and collaborate on documents in real-time over the internet.",
+  "publisher": "Fortinet",
+  "cs_approved": true,
+  "cs_compatible": true,
+  "category": "Utilities",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "type": "text",
+        "name": "server",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "description": "The service-based URI to which you will connect and perform the automated operations.",
+        "tooltip": "The service-based URI to which you will connect and perform the automated operations.",
+        "value": "https://docs.googleapis.com"
+      },
+      {
+        "title": "Client ID",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "client_id",
+        "description": "Unique Client ID of the Google Docs that is used to create an authentication token required to access the Google Docs API.",
+        "tooltip": "Unique Client ID of the Google Docs that is used to create an authentication token required to access the Google Docs API."
+      },
+      {
+        "title": "Client Secret",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "name": "client_secret",
+        "description": "Unique Client Secret of the Google Docs that is used to create an authentication token required to access the API. For information on how to get the client secret, see https://developers.google.com/identity/protocols/oauth2/web-server.",
+        "tooltip": "Unique Client Secret of the Google Docs that is used to create an authentication token required to access the API."
+      },
+      {
+        "title": "Authorization Code",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "name": "code",
+        "tooltip": "The authorization code that you acquired during the authorization step. For more information, see the Accessing the Google Docs API section.",
+        "description": "The authorization code that you acquired during the authorization step. For more information, see the Accessing the Google Docs API section."
+      },
+      {
+        "title": "Redirect URL",
+        "description": "The redirect_uri of your app, where authentication responses can be sent and received by your app. It must exactly match one of the redirect_uri's you registered in the app registration portal.",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "redirect_url",
+        "placeholder": "E.g. https://localhost/myapp",
+        "tooltip": "The redirect_uri of your app, where authentication responses can be sent and received by your app. It must exactly match one of the redirect_uri's you registered in the app registration portal."
+      },
+      {
+        "title": "Verify SSL",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "type": "checkbox",
+        "name": "verify_ssl",
+        "value": true,
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True.",
+        "tooltip": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True."
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "create_document",
+      "title": "Create Document",
+      "description": "Creates a blank document in Google Docs based on the title you have specified.",
+      "category": "investigation",
+      "annotation": "create_document",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Title",
+          "name": "title",
+          "description": "Specify the title of the document based on which you want to create a document in Google Docs.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the title of the document based on which you want to create a document in Google Docs."
+        }
+      ],
+      "output_schema": {
+        "title": "",
+        "body": {
+          "content": [
+            {
+              "startIndex": "",
+              "endIndex": "",
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": "",
+                    "endIndex": "",
+                    "textRun": {
+                      "content": "",
+                      "textStyle": {}
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "",
+                  "direction": ""
+                }
+              }
+            }
+          ]
+        },
+        "documentStyle": {
+          "background": {
+            "color": {}
+          },
+          "pageNumberStart": "",
+          "marginTop": {
+            "magnitude": "",
+            "unit": ""
+          },
+          "marginBottom": {
+            "magnitude": "",
+            "unit": ""
+          },
+          "marginRight": {
+            "magnitude": "",
+            "unit": ""
+          },
+          "marginLeft": {
+            "magnitude": "",
+            "unit": ""
+          },
+          "pageSize": {
+            "height": {
+              "magnitude": "",
+              "unit": ""
+            },
+            "width": {
+              "magnitude": "",
+              "unit": ""
+            }
+          },
+          "marginHeader": {
+            "magnitude": "",
+            "unit": ""
+          },
+          "marginFooter": {
+            "magnitude": "",
+            "unit": ""
+          },
+          "useCustomHeaderFooterMargins": ""
+        },
+        "namedStyles": {
+          "styles": [
+            {
+              "namedStyleType": "",
+              "textStyle": {
+                "bold": "",
+                "italic": "",
+                "underline": "",
+                "strikethrough": "",
+                "smallCaps": "",
+                "backgroundColor": {},
+                "foregroundColor": {
+                  "color": {
+                    "rgbColor": {}
+                  }
+                },
+                "fontSize": {
+                  "magnitude": "",
+                  "unit": ""
+                },
+                "weightedFontFamily": {
+                  "fontFamily": "",
+                  "weight": ""
+                },
+                "baselineOffset": ""
+              },
+              "paragraphStyle": {
+                "namedStyleType": "",
+                "alignment": "",
+                "lineSpacing": "",
+                "direction": "",
+                "spacingMode": "",
+                "spaceAbove": {
+                  "unit": ""
+                },
+                "spaceBelow": {
+                  "unit": ""
+                },
+                "borderBetween": {
+                  "color": {},
+                  "width": {
+                    "unit": ""
+                  },
+                  "padding": {
+                    "unit": ""
+                  },
+                  "dashStyle": ""
+                },
+                "borderTop": {
+                  "color": {},
+                  "width": {
+                    "unit": ""
+                  },
+                  "padding": {
+                    "unit": ""
+                  },
+                  "dashStyle": ""
+                },
+                "borderBottom": {
+                  "color": {},
+                  "width": {
+                    "unit": ""
+                  },
+                  "padding": {
+                    "unit": ""
+                  },
+                  "dashStyle": ""
+                },
+                "borderLeft": {
+                  "color": {},
+                  "width": {
+                    "unit": ""
+                  },
+                  "padding": {
+                    "unit": ""
+                  },
+                  "dashStyle": ""
+                },
+                "borderRight": {
+                  "color": {},
+                  "width": {
+                    "unit": ""
+                  },
+                  "padding": {
+                    "unit": ""
+                  },
+                  "dashStyle": ""
+                },
+                "indentFirstLine": {
+                  "unit": ""
+                },
+                "indentStart": {
+                  "unit": ""
+                },
+                "indentEnd": {
+                  "unit": ""
+                },
+                "keepLinesTogether": "",
+                "keepWithNext": "",
+                "avoidWidowAndOrphan": "",
+                "shading": {
+                  "backgroundColor": {}
+                },
+                "pageBreakBefore": ""
+              }
+            }
+          ]
+        },
+        "revisionId": "",
+        "suggestionsViewMode": "",
+        "documentId": ""
+      }
+    },
+    {
+      "operation": "get_document_details",
+      "title": "Get Document Details",
+      "description": "Retrieves an document details based on the document ID and other input parameters that you have specified.",
+      "category": "investigation",
+      "annotation": "get_document_details",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Document ID",
+          "name": "document_id",
+          "description": "Specify the ID of the document based on which you want to retrieve document details from Google Docs.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the ID of the document based on which you want to retrieve document details from Google Docs."
+        },
+        {
+          "title": "Suggestions View Mode",
+          "name": "suggestionsViewMode",
+          "description": "Specify the suggestions view mode to apply to the document. This allows viewing the document with all suggestions inline, accepted or rejected. If one is not specified, Default For Current Access is used.",
+          "type": "select",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the suggestions view mode to apply to the document. This allows viewing the document with all suggestions inline, accepted or rejected. If one is not specified, Default For Current Access is used.",
+          "options": [
+            "Default For Current Access",
+            "Suggestions Inline",
+            "Preview Suggestions Accepted",
+            "Preview Without Suggestions"
+          ],
+          "value": "Default For Current Access"
+        }
+      ],
+      "output_schema": {
+        "title": "",
+        "body": {
+          "content": [
+            {
+              "endIndex": "",
+              "sectionBreak": {
+                "sectionStyle": {
+                  "columnSeparatorStyle": "",
+                  "contentDirection": "",
+                  "sectionType": ""
+                }
+              }
+            },
+            {
+              "startIndex": "",
+              "endIndex": "",
+              "paragraph": {
+                "elements": [
+                  {
+                    "startIndex": "",
+                    "endIndex": "",
+                    "textRun": {
+                      "content": "",
+                      "textStyle": {}
+                    }
+                  }
+                ],
+                "paragraphStyle": {
+                  "namedStyleType": "",
+                  "direction": ""
+                }
+              }
+            }
+          ]
+        },
+        "documentStyle": {
+          "background": {
+            "color": {}
+          },
+          "pageNumberStart": "",
+          "marginTop": {
+            "magnitude": "",
+            "unit": ""
+          },
+          "marginBottom": {
+            "magnitude": "",
+            "unit": ""
+          },
+          "marginRight": {
+            "magnitude": "",
+            "unit": ""
+          },
+          "marginLeft": {
+            "magnitude": "",
+            "unit": ""
+          },
+          "pageSize": {
+            "height": {
+              "magnitude": "",
+              "unit": ""
+            },
+            "width": {
+              "magnitude": "",
+              "unit": ""
+            }
+          },
+          "marginHeader": {
+            "magnitude": "",
+            "unit": ""
+          },
+          "marginFooter": {
+            "magnitude": "",
+            "unit": ""
+          },
+          "useCustomHeaderFooterMargins": ""
+        },
+        "namedStyles": {
+          "styles": [
+            {
+              "namedStyleType": "",
+              "textStyle": {
+                "bold": "",
+                "italic": "",
+                "underline": "",
+                "strikethrough": "",
+                "smallCaps": "",
+                "backgroundColor": {},
+                "foregroundColor": {
+                  "color": {
+                    "rgbColor": {}
+                  }
+                },
+                "fontSize": {
+                  "magnitude": "",
+                  "unit": ""
+                },
+                "weightedFontFamily": {
+                  "fontFamily": "",
+                  "weight": ""
+                },
+                "baselineOffset": ""
+              },
+              "paragraphStyle": {
+                "namedStyleType": "",
+                "alignment": "",
+                "lineSpacing": "",
+                "direction": "",
+                "spacingMode": "",
+                "spaceAbove": {
+                  "unit": ""
+                },
+                "spaceBelow": {
+                  "unit": ""
+                },
+                "borderBetween": {
+                  "color": {},
+                  "width": {
+                    "unit": ""
+                  },
+                  "padding": {
+                    "unit": ""
+                  },
+                  "dashStyle": ""
+                },
+                "borderTop": {
+                  "color": {},
+                  "width": {
+                    "unit": ""
+                  },
+                  "padding": {
+                    "unit": ""
+                  },
+                  "dashStyle": ""
+                },
+                "borderBottom": {
+                  "color": {},
+                  "width": {
+                    "unit": ""
+                  },
+                  "padding": {
+                    "unit": ""
+                  },
+                  "dashStyle": ""
+                },
+                "borderLeft": {
+                  "color": {},
+                  "width": {
+                    "unit": ""
+                  },
+                  "padding": {
+                    "unit": ""
+                  },
+                  "dashStyle": ""
+                },
+                "borderRight": {
+                  "color": {},
+                  "width": {
+                    "unit": ""
+                  },
+                  "padding": {
+                    "unit": ""
+                  },
+                  "dashStyle": ""
+                },
+                "indentFirstLine": {
+                  "unit": ""
+                },
+                "indentStart": {
+                  "unit": ""
+                },
+                "indentEnd": {
+                  "unit": ""
+                },
+                "keepLinesTogether": "",
+                "keepWithNext": "",
+                "avoidWidowAndOrphan": "",
+                "shading": {
+                  "backgroundColor": {}
+                },
+                "pageBreakBefore": ""
+              }
+            }
+          ]
+        },
+        "revisionId": "",
+        "suggestionsViewMode": "",
+        "documentId": ""
+      }
+    },
+    {
+      "operation": "update_documents",
+      "title": "Update Documents",
+      "description": "Applies one or more updates to the document in Google Docs based on the document ID and other input parameters that you have specified.",
+      "category": "investigation",
+      "annotation": "update_documents",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Document ID",
+          "name": "document_id",
+          "description": "Specify the ID of the document based on which you want to update documents details in Google Docs.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Specify the ID of the document based on which you want to update documents details in Google Docs."
+        },
+        {
+          "title": "Revision ID",
+          "name": "requiredRevisionId",
+          "description": "Specify the ID of the revision based on which you want to update documents details in Google Docs.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the ID of the revision based on which you want to update documents details in Google Docs."
+        },
+        {
+          "title": "Target Revision ID",
+          "name": "targetRevisionId",
+          "description": "Specify the ID of the target revision based on which you want to update documents details in Google Docs.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Specify the ID of the target revision based on which you want to update documents details in Google Docs."
+        },
+        {
+          "title": "Additional Fields",
+          "name": "additional_parameters",
+          "type": "json",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "tooltip": "Additional fields, in the JSON format, based on which you want to update documents in Google Docs.",
+          "description": "Additional fields, in the JSON format, based on which you want to update documents in Google Docs.",
+          "value": [
+            {
+              "createFooter": {
+                "sectionBreakLocation": {
+                  "index": 0,
+                  "segmentId": ""
+                },
+                "type": "DEFAULT"
+              },
+              "createFootnote": {
+                "endOfSegmentLocation": {
+                  "segmentId": ""
+                },
+                "location": {
+                  "index": 0,
+                  "segmentId": ""
+                }
+              },
+              "createHeader": {
+                "sectionBreakLocation": {
+                  "index": 0,
+                  "segmentId": ""
+                },
+                "type": ""
+              },
+              "createNamedRange": {
+                "name": "",
+                "range": {
+                  "endIndex": 0,
+                  "segmentId": "",
+                  "startIndex": 0
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "output_schema": {
+        "replies": [
+          {
+            "createFooter": {
+              "footerId": ""
+            }
+          }
+        ],
+        "writeControl": {
+          "requiredRevisionId": ""
+        },
+        "documentId": ""
+      }
+    }
+  ]
+}
